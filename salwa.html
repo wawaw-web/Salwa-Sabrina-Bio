@@ -1,0 +1,250 @@
+<!DOCTYPE html> <!-- Mendefinisikan tipe dokumen sebagai HTML5 -->
+<html lang="id"> <!-- Tag pembuka HTML, dengan atribut bahasa Indonesia -->
+
+<head> <!-- Bagian kepala dari dokumen -->
+  <meta charset="UTF-8"> <!-- Menentukan karakter encoding -->
+  <title>Biografi</title> <!-- Judul halaman pada tab browser -->
+
+  <style>
+    /* Mengatur gaya (style) untuk seluruh elemen pada halaman */
+
+    body {
+      font-family: "Times New Roman", Times, serif; /* Jenis huruf utama */
+      background: linear-gradient(to right, #fce4ec, #e3f2fd); /* Background gradien */
+      margin: 0; /* Menghilangkan margin default */
+      padding: 0; /* Menghilangkan padding default */
+    }
+
+    .cv-container {
+      max-width: 950px; /* Lebar maksimum kontainer */
+      margin: 40px auto; /* Menengahkan kontainer secara horizontal */
+      background: #fffafc; /* Warna latar belakang kontainer */
+      padding: 40px; /* Jarak isi kontainer dari tepi */
+      border-radius: 20px; /* Sudut melengkung */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Bayangan kontainer */
+      animation: slideFade 1s ease; /* Animasi muncul */
+    }
+
+    @keyframes slideFade {
+      from {
+        opacity: 0; /* Awal animasi: transparan */
+        transform: translateY(30px); /* Awal animasi: turun 30px */
+      }
+      to {
+        opacity: 1; /* Akhir animasi: terlihat */
+        transform: translateY(0); /* Akhir animasi: kembali ke posisi awal */
+      }
+    }
+
+    .cv-header {
+      display: flex; /* Menggunakan flexbox untuk header */
+      align-items: flex-start; /* Menyusun sejajar dari atas */
+      gap: 30px; /* Jarak antar elemen di dalam header */
+      margin-bottom: 30px; /* Jarak bawah header */
+    }
+
+    .profile-pic {
+      flex-shrink: 0; /* Foto tidak menyusut saat ukuran layar berubah */
+    }
+
+    .profile-pic img {
+      width: 236px; /* Lebar foto */
+      height: 315px; /* Tinggi foto */
+      object-fit: cover; /* Menyesuaikan isi gambar dengan frame */
+      border-radius: 12px; /* Sudut melengkung */
+      border: 5px solid #f8bbd0; /* Garis pinggir foto */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Bayangan foto */
+    }
+
+    .bio-info {
+      flex-grow: 1; /* Mengisi ruang sisa di flexbox */
+    }
+
+    h1 {
+      margin: 0 0 10px 0; /* Mengatur margin atas dan bawah */
+      color: #6a1b9a; /* Warna teks judul */
+    }
+
+    p {
+      text-align: justify; /* Rata kiri kanan */
+      line-height: 1.8; /* Jarak antar baris */
+      color: #4e4e4e; /* Warna teks */
+      margin-bottom: 30px; /* Jarak bawah paragraf */
+    }
+
+    h2 {
+      text-align: center; /* Tengah */
+      color: #6a1b9a; /* Warna judul */
+      margin-bottom: 20px; /* Jarak bawah */
+    }
+
+    table {
+      width: 100%; /* Lebar penuh */
+      border-collapse: collapse; /* Menggabungkan border */
+      background-color: #fffafc; /* Warna latar */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bayangan */
+      border-radius: 12px; /* Sudut membulat */
+      overflow: hidden; /* Menyembunyikan overflow */
+      margin-bottom: 30px; /* Jarak bawah tabel */
+    }
+
+    th, td {
+      padding: 16px; /* Jarak dalam sel */
+      text-align: center; /* Tengah */
+      border: 1px solid #f8bbd0; /* Garis antar sel */
+      color: #4e4e4e; /* Warna teks */
+      transition: background 0.3s ease; /* Efek perubahan latar */
+    }
+
+    th {
+      background-color: #f8bbd0; /* Latar kepala tabel */
+      color: white; /* Warna teks kepala */
+      font-weight: bold; /* Teks tebal */
+    }
+
+    tr:nth-child(even) {
+      background-color: #fce4ec; /* Warna baris genap */
+    }
+
+    tr:hover td {
+      background-color: #f3e5f5; /* Efek hover baris */
+    }
+
+    ul {
+      list-style-type: none; /* Menghilangkan bullet */
+      padding-left: 0; /* Hilangkan indent */
+      margin-bottom: 30px; /* Jarak bawah */
+    }
+
+    ul li {
+      margin-bottom: 8px; /* Jarak antar item */
+      padding-left: 25px; /* Jarak kiri */
+      position: relative; /* Posisi relatif untuk icon */
+      transition: all 0.3s ease; /* Efek transisi */
+      color: #4e4e4e; /* Warna teks */
+    }
+
+    ul li::before {
+      content: "🏆"; /* Icon sebelum teks */
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    ul li:hover {
+      color: #d81b60; /* Warna saat hover */
+      transform: translateX(5px); /* Geser kanan saat hover */
+    }
+
+    a {
+      display: inline-block; /* Agar bisa diberi padding */
+      text-decoration: none; /* Hilangkan garis bawah */
+      color: #fff; /* Warna teks */
+      background: #f06292; /* Latar tombol */
+      padding: 10px 18px; /* Padding tombol */
+      border-radius: 8px; /* Sudut membulat */
+      margin: 8px 12px 0 0; /* Margin antar tombol */
+      transition: all 0.3s ease; /* Efek transisi */
+    }
+
+    a:hover {
+      background: #c2185b; /* Warna hover */
+      transform: scale(1.05); /* Efek membesar sedikit */
+    }
+
+    h2.section-title {
+      text-align: center;
+      color: #6a1b9a; /* Warna judul seksi */
+    }
+  </style>
+</head>
+
+<body> <!-- Awal konten halaman -->
+
+<div class="cv-container"> <!-- Kontainer utama isi halaman -->
+
+  <!-- Header (foto dan bio) -->
+  <div class="cv-header">
+    <div class="profile-pic">
+      <img src="sasa.jpeg" alt="Foto Profil"> <!-- Foto profil -->
+    </div>
+    <div class="bio-info">
+      <h1>Salwa Sabrina Putri Wijaya</h1> <!-- Nama -->
+      <p>
+        <!-- Deskripsi biografi pribadi -->
+        Saya memiliki minat yang besar dalam bidang ilmu sosial, terutama sejarah dan ekonomi.  
+        Ketertarikan saya terhadap dinamika sosial membuat saya senang mempelajari hubungan antar manusia dan masyarakat.  
+        Selain itu, saya juga menyukai bahasa Inggris dan pernah mengikuti berbagai kompetisi seperti speech dan story telling.  
+        Pengalaman tersebut membantu saya meningkatkan kepercayaan diri dan kemampuan berkomunikasi.  
+        Saya percaya bahwa kemampuan bahasa merupakan kunci untuk memahami dunia yang lebih luas.  
+        Dalam hal belajar, saya adalah pribadi yang ambisius dan selalu ingin mengetahui lebih dalam tentang sesuatu yang saya pelajari.  
+        Saya juga memiliki dedikasi tinggi untuk mencapai tujuan dan tidak mudah menyerah dalam menghadapi tantangan.  
+        Dengan semangat dan konsistensi, saya yakin setiap proses akan membuahkan hasil yang terbaik.
+      </p>
+    </div>
+  </div>
+
+  <!-- Tabel Data Diri -->
+  <h2>Data Diri</h2>
+  <table>
+    <tr>
+      <th>Nama</th>
+      <th>Tanggal Lahir</th>
+      <th>Email</th>
+      <th>Alamat</th>
+    </tr>
+    <tr>
+      <td>Salwa Sabrina Putri Wijaya</td>
+      <td>25 Agustus 2007</td>
+      <td>Salwabdj3@gmail.com</td>
+      <td>Lampung, Indonesia</td>
+    </tr>
+  </table>
+
+  <!-- Tabel Riwayat Pendidikan -->
+  <h2>Riwayat Pendidikan</h2>
+  <table>
+    <tr>
+      <th>Jenjang</th>
+      <th>Nama Sekolah</th>
+    </tr>
+    <tr>
+      <td>SD</td>
+      <td>SDN 1 Gunung Madu</td>
+    </tr>
+    <tr>
+      <td>SMP</td>
+      <td>SMP Satya Dharma Sudjana</td>
+    </tr>
+    <tr>
+      <td>SMA</td>
+      <td>SMA Gunung Madu</td>
+    </tr>
+  </table>
+
+  <!-- Daftar Pencapaian -->
+  <h2 class="section-title">Pencapaian</h2>
+  <ul>
+    <li>Meraih medali emas Olimpiade Bahasa Inggris dalam kompetisi Dignity</li>
+    <li>Meraih medali perak Geografi dalam kompetisi Dignity</li>
+    <li>Meraih medali perak Bahasa Inggris di Liga Olimpiade</li>
+    <li>Selalu mendapatkan peringkat 1 umum di sekolah</li>
+    <li>Menjadi peserta lomba Speech tingkat nasional</li>
+    <li>Menjadi peserta lomba Story Telling tingkat kabupaten</li>
+    <li>Menjadi peserta lomba Senam tingkat Penggalang SD tingkat kabupaten</li>
+    <li>Menjadi peserta lomba Senam tingkat Penggalang SMP tingkat kabupaten</li>
+    <li>Mendapatkan skor TOEFL yang cukup tinggi</li>
+    <li>Selalu mendapatkan peringkat umum saat SD</li>
+    <li>Menjadi peserta lomba senam tingkat Penegak SMA tingkat kabupaten</li>
+    <li>Menjadi peserta lomba osn geografi tingkat provinsi</li>
+    <li>Menjadi Wakil Bendahara osis di SMA periode 2023-2024</li>
+  </ul>
+
+  <!-- Link ke Dokumen dan Media Sosial -->
+  <h2 class="section-title">Link Penting</h2>
+  <a href="https://drive.google.com/drive/folders/1Hqk8yb8QvDsiIUqcNp_1j7LNvdYlLpgC" target="_blank">📂 gdrive kaka</a>
+  <a href="https://www.instagram.com/salwasbrna25?igsh=MTNncmZ5cDNieWZzaw==" target="_blank">📸 Insta </a>
+</div>
+
+</body> <!-- Akhir konten halaman -->
+</html> <!-- Penutup HTML -->
