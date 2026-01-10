@@ -1,250 +1,302 @@
-<!DOCTYPE html> <!-- Mendefinisikan tipe dokumen sebagai HTML5 -->
-<html lang="id"> <!-- Tag pembuka HTML, dengan atribut bahasa Indonesia -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Prestasi | Salwa Sabrina</title>
 
-<head> <!-- Bagian kepala dari dokumen -->
-  <meta charset="UTF-8"> <!-- Menentukan karakter encoding -->
-  <title>Biografi</title> <!-- Judul halaman pada tab browser -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* Mengatur gaya (style) untuk seluruh elemen pada halaman */
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at top left,#c3c9ff,transparent 45%),
+    radial-gradient(circle at bottom right,#fbc8ff,transparent 45%),
+    linear-gradient(135deg,#eef1ff,#fdfcff);
+  color:#2b2b2b;
+}
 
-    body {
-      font-family: "Times New Roman", Times, serif; /* Jenis huruf utama */
-      background: linear-gradient(to right, #fce4ec, #e3f2fd); /* Background gradien */
-      margin: 0; /* Menghilangkan margin default */
-      padding: 0; /* Menghilangkan padding default */
-    }
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:70px auto;
+  background:linear-gradient(145deg,rgba(255,255,255,0.85),rgba(240,242,255,0.85));
+  backdrop-filter:blur(18px);
+  border-radius:30px;
+  box-shadow:0 35px 90px rgba(80,90,160,0.35);
+  overflow:hidden;
+  animation:fadeIn 1.3s ease;
+}
 
-    .cv-container {
-      max-width: 950px; /* Lebar maksimum kontainer */
-      margin: 40px auto; /* Menengahkan kontainer secara horizontal */
-      background: #fffafc; /* Warna latar belakang kontainer */
-      padding: 40px; /* Jarak isi kontainer dari tepi */
-      border-radius: 20px; /* Sudut melengkung */
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Bayangan kontainer */
-      animation: slideFade 1s ease; /* Animasi muncul */
-    }
+/* HEADER */
+.header{
+  padding:80px;
+  display:flex;
+  gap:55px;
+  align-items:center;
+  background:
+    linear-gradient(135deg,#6a7cff,#8e5dff,#c26bff);
+  color:#fff;
+}
 
-    @keyframes slideFade {
-      from {
-        opacity: 0; /* Awal animasi: transparan */
-        transform: translateY(30px); /* Awal animasi: turun 30px */
-      }
-      to {
-        opacity: 1; /* Akhir animasi: terlihat */
-        transform: translateY(0); /* Akhir animasi: kembali ke posisi awal */
-      }
-    }
+.header img{
+  width:220px;
+  height:280px;
+  object-fit:cover;
+  border-radius:26px;
+  border:6px solid rgba(255,255,255,0.95);
+  box-shadow:0 25px 55px rgba(0,0,0,0.35);
+}
 
-    .cv-header {
-      display: flex; /* Menggunakan flexbox untuk header */
-      align-items: flex-start; /* Menyusun sejajar dari atas */
-      gap: 30px; /* Jarak antar elemen di dalam header */
-      margin-bottom: 30px; /* Jarak bawah header */
-    }
+.header h1{
+  margin:0;
+  font-size:42px;
+  font-weight:700;
+}
 
-    .profile-pic {
-      flex-shrink: 0; /* Foto tidak menyusut saat ukuran layar berubah */
-    }
+.header h3{
+  margin:14px 0 24px;
+  font-weight:400;
+  opacity:.95;
+}
 
-    .profile-pic img {
-      width: 236px; /* Lebar foto */
-      height: 315px; /* Tinggi foto */
-      object-fit: cover; /* Menyesuaikan isi gambar dengan frame */
-      border-radius: 12px; /* Sudut melengkung */
-      border: 5px solid #f8bbd0; /* Garis pinggir foto */
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Bayangan foto */
-    }
+.header p{
+  max-width:720px;
+  line-height:1.9;
+  font-size:15px;
+}
 
-    .bio-info {
-      flex-grow: 1; /* Mengisi ruang sisa di flexbox */
-    }
+/* SOCIAL */
+.social a{
+  display:inline-block;
+  margin:10px 14px 0 0;
+  padding:13px 26px;
+  border-radius:32px;
+  background:rgba(255,255,255,0.22);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  transition:.35s;
+}
+.social a:hover{
+  background:#fff;
+  color:#7b4dff;
+  transform:translateY(-4px);
+}
 
-    h1 {
-      margin: 0 0 10px 0; /* Mengatur margin atas dan bawah */
-      color: #6a1b9a; /* Warna teks judul */
-    }
+/* CONTENT */
+.content{padding:90px}
 
-    p {
-      text-align: justify; /* Rata kiri kanan */
-      line-height: 1.8; /* Jarak antar baris */
-      color: #4e4e4e; /* Warna teks */
-      margin-bottom: 30px; /* Jarak bawah paragraf */
-    }
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  font-size:36px;
+  font-weight:600;
+  color:#6a6eff;
+  margin-bottom:80px;
+  position:relative;
+}
+.section-title::after{
+  content:'';
+  width:110px;
+  height:5px;
+  background:linear-gradient(90deg,#6a7cff,#c26bff);
+  display:block;
+  margin:20px auto 0;
+  border-radius:20px;
+}
 
-    h2 {
-      text-align: center; /* Tengah */
-      color: #6a1b9a; /* Warna judul */
-      margin-bottom: 20px; /* Jarak bawah */
-    }
+/* TIMELINE */
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:0 auto 140px;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  width:5px;
+  height:100%;
+  background:linear-gradient(#6a7cff,#c26bff);
+  transform:translateX(-50%);
+}
+.timeline-item{
+  width:50%;
+  padding:35px 55px;
+  position:relative;
+}
+.timeline-item:nth-child(odd){left:0;text-align:right}
+.timeline-item:nth-child(even){left:50%}
 
-    table {
-      width: 100%; /* Lebar penuh */
-      border-collapse: collapse; /* Menggabungkan border */
-      background-color: #fffafc; /* Warna latar */
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bayangan */
-      border-radius: 12px; /* Sudut membulat */
-      overflow: hidden; /* Menyembunyikan overflow */
-      margin-bottom: 30px; /* Jarak bawah tabel */
-    }
+.timeline-card{
+  background:linear-gradient(145deg,#ffffff,#f0f2ff);
+  padding:32px;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(90,100,200,0.25);
+  transition:.45s;
+}
+.timeline-card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+.timeline-card h3{
+  margin:0;
+  color:#6a6eff;
+}
 
-    th, td {
-      padding: 16px; /* Jarak dalam sel */
-      text-align: center; /* Tengah */
-      border: 1px solid #f8bbd0; /* Garis antar sel */
-      color: #4e4e4e; /* Warna teks */
-      transition: background 0.3s ease; /* Efek perubahan latar */
-    }
+/* ACHIEVEMENT IMAGES */
+.achievement-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  margin-bottom:140px;
+}
+.achievement-card{
+  border-radius:28px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#ffffff,#eef0ff);
+  box-shadow:0 25px 65px rgba(90,100,200,0.3);
+  transition:.45s;
+}
+.achievement-card:hover{
+  transform:translateY(-14px) scale(1.04);
+}
+.achievement-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+.achievement-card div{
+  padding:30px;
+}
+.achievement-card h3{color:#6a6eff}
+.achievement-card a{
+  display:inline-block;
+  margin-top:18px;
+  padding:13px 26px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#6a7cff,#c26bff);
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
 
-    th {
-      background-color: #f8bbd0; /* Latar kepala tabel */
-      color: white; /* Warna teks kepala */
-      font-weight: bold; /* Teks tebal */
-    }
+/* BADGES */
+.badge-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.badge{
+  background:linear-gradient(145deg,#ffffff,#f1f2ff);
+  padding:30px 34px;
+  border-radius:22px;
+  box-shadow:0 18px 45px rgba(90,100,200,0.25);
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  transition:.4s;
+}
+.badge:hover{
+  transform:translateY(-8px);
+}
+.badge span{
+  font-size:32px;
+}
+.badge strong{
+  color:#6a6eff;
+}
 
-    tr:nth-child(even) {
-      background-color: #fce4ec; /* Warna baris genap */
-    }
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(50px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-    tr:hover td {
-      background-color: #f3e5f5; /* Efek hover baris */
-    }
-
-    ul {
-      list-style-type: none; /* Menghilangkan bullet */
-      padding-left: 0; /* Hilangkan indent */
-      margin-bottom: 30px; /* Jarak bawah */
-    }
-
-    ul li {
-      margin-bottom: 8px; /* Jarak antar item */
-      padding-left: 25px; /* Jarak kiri */
-      position: relative; /* Posisi relatif untuk icon */
-      transition: all 0.3s ease; /* Efek transisi */
-      color: #4e4e4e; /* Warna teks */
-    }
-
-    ul li::before {
-      content: "🏆"; /* Icon sebelum teks */
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    ul li:hover {
-      color: #d81b60; /* Warna saat hover */
-      transform: translateX(5px); /* Geser kanan saat hover */
-    }
-
-    a {
-      display: inline-block; /* Agar bisa diberi padding */
-      text-decoration: none; /* Hilangkan garis bawah */
-      color: #fff; /* Warna teks */
-      background: #f06292; /* Latar tombol */
-      padding: 10px 18px; /* Padding tombol */
-      border-radius: 8px; /* Sudut membulat */
-      margin: 8px 12px 0 0; /* Margin antar tombol */
-      transition: all 0.3s ease; /* Efek transisi */
-    }
-
-    a:hover {
-      background: #c2185b; /* Warna hover */
-      transform: scale(1.05); /* Efek membesar sedikit */
-    }
-
-    h2.section-title {
-      text-align: center;
-      color: #6a1b9a; /* Warna judul seksi */
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:900px){
+  .header{flex-direction:column;text-align:center}
+  .timeline::before{left:20px}
+  .timeline-item{width:100%;left:0;padding-left:65px;text-align:left}
+}
+</style>
 </head>
 
-<body> <!-- Awal konten halaman -->
+<body>
 
-<div class="cv-container"> <!-- Kontainer utama isi halaman -->
+<div class="container">
 
-  <!-- Header (foto dan bio) -->
-  <div class="cv-header">
-    <div class="profile-pic">
-      <img src="sasa.jpeg" alt="Foto Profil"> <!-- Foto profil -->
-    </div>
-    <div class="bio-info">
-      <h1>Salwa Sabrina Putri Wijaya</h1> <!-- Nama -->
-      <p>
-        <!-- Deskripsi biografi pribadi -->
-        Saya memiliki minat yang besar dalam bidang ilmu sosial, terutama sejarah dan ekonomi.  
-        Ketertarikan saya terhadap dinamika sosial membuat saya senang mempelajari hubungan antar manusia dan masyarakat.  
-        Selain itu, saya juga menyukai bahasa Inggris dan pernah mengikuti berbagai kompetisi seperti speech dan story telling.  
-        Pengalaman tersebut membantu saya meningkatkan kepercayaan diri dan kemampuan berkomunikasi.  
-        Saya percaya bahwa kemampuan bahasa merupakan kunci untuk memahami dunia yang lebih luas.  
-        Dalam hal belajar, saya adalah pribadi yang ambisius dan selalu ingin mengetahui lebih dalam tentang sesuatu yang saya pelajari.  
-        Saya juga memiliki dedikasi tinggi untuk mencapai tujuan dan tidak mudah menyerah dalam menghadapi tantangan.  
-        Dengan semangat dan konsistensi, saya yakin setiap proses akan membuahkan hasil yang terbaik.
-      </p>
+<div class="header">
+  <img src="sasa.jpeg">
+  <div>
+    <h1>Salwa Sabrina Putri Wijaya</h1>
+    <h3>Outstanding Student | Academic Achiever</h3>
+    <p>
+      Pelajar berprestasi dengan pencapaian akademik dan non-akademik yang konsisten sejak SD hingga SMA,
+      aktif dalam kompetisi tingkat kabupaten, provinsi, hingga nasional.
+    </p>
+    <div class="social">
+      <a href="https://www.instagram.com/salwasbrna25">Instagram</a>
+      <a href="mailto:salwabdj3@gmail.com">Email</a>
+      <a href="https://drive.google.com">Google Drive</a>
     </div>
   </div>
-
-  <!-- Tabel Data Diri -->
-  <h2>Data Diri</h2>
-  <table>
-    <tr>
-      <th>Nama</th>
-      <th>Tanggal Lahir</th>
-      <th>Email</th>
-      <th>Alamat</th>
-    </tr>
-    <tr>
-      <td>Salwa Sabrina Putri Wijaya</td>
-      <td>25 Agustus 2007</td>
-      <td>Salwabdj3@gmail.com</td>
-      <td>Lampung, Indonesia</td>
-    </tr>
-  </table>
-
-  <!-- Tabel Riwayat Pendidikan -->
-  <h2>Riwayat Pendidikan</h2>
-  <table>
-    <tr>
-      <th>Jenjang</th>
-      <th>Nama Sekolah</th>
-    </tr>
-    <tr>
-      <td>SD</td>
-      <td>SDN 1 Gunung Madu</td>
-    </tr>
-    <tr>
-      <td>SMP</td>
-      <td>SMP Satya Dharma Sudjana</td>
-    </tr>
-    <tr>
-      <td>SMA</td>
-      <td>SMA Gunung Madu</td>
-    </tr>
-  </table>
-
-  <!-- Daftar Pencapaian -->
-  <h2 class="section-title">Pencapaian</h2>
-  <ul>
-    <li>Meraih medali emas Olimpiade Bahasa Inggris dalam kompetisi Dignity</li>
-    <li>Meraih medali perak Geografi dalam kompetisi Dignity</li>
-    <li>Meraih medali perak Bahasa Inggris di Liga Olimpiade</li>
-    <li>Selalu mendapatkan peringkat 1 umum di sekolah</li>
-    <li>Menjadi peserta lomba Speech tingkat nasional</li>
-    <li>Menjadi peserta lomba Story Telling tingkat kabupaten</li>
-    <li>Menjadi peserta lomba Senam tingkat Penggalang SD tingkat kabupaten</li>
-    <li>Menjadi peserta lomba Senam tingkat Penggalang SMP tingkat kabupaten</li>
-    <li>Mendapatkan skor TOEFL yang cukup tinggi</li>
-    <li>Selalu mendapatkan peringkat umum saat SD</li>
-    <li>Menjadi peserta lomba senam tingkat Penegak SMA tingkat kabupaten</li>
-    <li>Menjadi peserta lomba osn geografi tingkat provinsi</li>
-    <li>Menjadi Wakil Bendahara osis di SMA periode 2023-2024</li>
-  </ul>
-
-  <!-- Link ke Dokumen dan Media Sosial -->
-  <h2 class="section-title">Link Penting</h2>
-  <a href="https://drive.google.com/drive/folders/1Hqk8yb8QvDsiIUqcNp_1j7LNvdYlLpgC" target="_blank">📂 gdrive kaka</a>
-  <a href="https://www.instagram.com/salwasbrna25?igsh=MTNncmZ5cDNieWZzaw==" target="_blank">📸 Insta </a>
 </div>
 
-</body> <!-- Akhir konten halaman -->
-</html> <!-- Penutup HTML -->
+<div class="content">
+
+<div class="section-title">Riwayat Pendidikan</div>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <h3>SD</h3>
+      <p>SDN 1 Gunung Madu Plantation</p>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <h3>SMP</h3>
+      <p>SMP Satya Dharma Sudjana</p>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-card">
+      <h3>SMA</h3>
+      <p>SMA Gunung Madu</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">Dokumentasi Prestasi</div>
+<div class="achievement-grid">
+  <div class="achievement-card">
+    <img src="sd.jpg">
+    <div><h3>Prestasi SD</h3><a href="#">📂 Google Drive</a></div>
+  </div>
+  <div class="achievement-card">
+    <img src="smp.jpg">
+    <div><h3>Prestasi SMP</h3><a href="#">📂 Google Drive</a></div>
+  </div>
+  <div class="achievement-card">
+    <img src="sma.jpg">
+    <div><h3>Prestasi SMA</h3><a href="#">📂 Google Drive</a></div>
+  </div>
+</div>
+
+<div class="section-title">Pencapaian Unggulan</div>
+<div class="badge-grid">
+  <div class="badge"><span>🥇</span><div><strong>Medali Emas</strong><br>Olimpiade Bahasa Inggris</div></div>
+  <div class="badge"><span>🥈</span><div><strong>Medali Perak</strong><br>Geografi & Bahasa Inggris</div></div>
+  <div class="badge"><span>🏆</span><div><strong>Peringkat 1 Umum</strong><br>Konsisten sejak SD</div></div>
+  <div class="badge"><span>🎤</span><div><strong>Speech Nasional</strong></div></div>
+  <div class="badge"><span>🌍</span><div><strong>OSN Geografi</strong><br>Tingkat Provinsi</div></div>
+  <div class="badge"><span>💼</span><div><strong>Wakil Bendahara OSIS</strong><br>2023–2024</div></div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
